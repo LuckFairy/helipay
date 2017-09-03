@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>找回密码-原密码</title>
+		<link href="../dist/css/mui.css" rel="stylesheet" />
+
+		<style>
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>原密码</label>
+					<input id='old-pass-input' type="text" class="mui-input mui-input-password" placeholder="请输入原密码">
+				</div>
+			</form>
+			<div class="mui-content-padded" style="text-align: right;">
+				<a href="forget_password.html" class="mui-btn-link opened-link" id="forgetPassword">忘记密码</a>
+			</div>
+			<div class="mui-content-padded">
+				<button id='old-pass' class="mui-btn mui-btn-block mui-btn-danger">下一步</button>
+			</div>
+		</div>
+		<script src="../dist/js/mui.min.js"></script>
+		
+	</body>
+
+</html>

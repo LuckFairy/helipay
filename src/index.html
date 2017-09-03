@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<base href="./" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="icon" href="#" type="image/x-icon" media="all"/>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body>
+
+		
+
+		<!--内容页-->
+		<div class="mui-content mui-scroll-wrapper">
+			<!--首页页面-->
+			<div id="tabbar" class="mui-control-content mui-scroll mui-active">
+			
+				<!--账户余额-->
+				 <div class="card-content">
+				 	<div class="card-row card-row-title">账户余额</div>
+				 	<div class="card-row card-row-input">
+				 		<div  class="input-password-a">
+				 			<a href="html/zh_my.html" class="open-link input-password-click ">
+				 				<input  type="text" class="input-password" value="￥10000.00" disabled="disabled">
+				 			</a>
+				 			<span href="html/tx.html" class="open-link tixian">提现</span>
+				 		</div>
+				 		<span class="icon icon_eye_open"></span>
+				 	</div>
+				 </div>
+				<!--我要收款-->
+				<div class="card-content shoukuan">
+		         	<div class="shoukuan-row">
+		         		<a href="html/sk_my.html" class="open-link">
+		         			
+			         		<div class="img-shoukuan">
+				         		<div class="btn-shoukuan">
+				         			我要收款
+				         		</div>
+			         		</div>
+		         		</a>
+		         	</div>
+		        </div> 
+		       
+		        <ul class=" mui-table-view mui-grid-view mui-grid-9" >
+		            <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="html/credit_my.html" class="open-link">
+		                    <span class="icon icon_index_card"></span>
+		                    <div class="mui-media-body">信用卡</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-6 "><a href="html/rate_my.html" class="open-link">
+		                    <span class="icon icon_index_rate"></span>
+		                    <div class="mui-media-body">我的费率</div></a></li>
+		      
+		        </ul> 
+		         <div style="height: 10px;width:100%;background: #F3F3F3;"></div>
+		        	<!--轮播图-->
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="images/banner.png">
+								<p class="mui-slider-title">静静看这世界</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/banner.png">
+								<p class="mui-slider-title">幸福就是可以一起睡觉</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/banner.png">
+								<p class="mui-slider-title">想要一间这样的木屋，静静的喝咖啡</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/banner.png">
+								<p class="mui-slider-title">Color of SIP CBD</p>
+							</a>
+						</div>
+				
+					</div>
+					
+				</div>
+				<!--轮播图-->
+			</div>
+			<!--首页页面-->
+
+		</div>
+		<script src="js/footer.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/zepto-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			//眼睛开合效果
+			var $icon_eye = document.querySelectorAll('.icon_eye_open');
+			for(var i=0,len=$icon_eye.length;i<len;i++){
+				$icon_eye[i].addEventListener('tap',function(){
+					var $parent = $(this).parent();
+					if($parent.hasClass('mui-active')){
+						$parent.removeClass('mui-active');
+						$parent.find('.input-password').attr('type','text');
+						$('.input-password-click').css('text-indent','0');
+					}else{
+						$parent.addClass('mui-active');
+						$parent.find('.input-password').attr('type','password');
+						$('.input-password-click').css('text-indent','12px');
+					}
+				})
+			}
+		</script>
+	</body>
+
+</html>

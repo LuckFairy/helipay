@@ -1,0 +1,40 @@
+//表格样式修改
+.table-view{
+    .table-view-cell:first-of-type{
+           padding:8px 0; 
+           margin-left: -15px;
+    }
+    &:first-of-type{
+      .table-view-cell:not(:first-of-type){
+          text-align: center;
+          padding:13px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          span{
+              flex: 1;
+              position: relative;
+          }
+      } 
+    }
+  
+}
+.b-r:after{
+     position: absolute;
+        right: 0;
+        top:-20px;
+        height: 60px;
+        width: 1px;
+        content: '';
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        background-color: #f3f3f3;
+}
+.list{
+    padding:18px 9px 20px;
+    li{
+        color:#43cfe8;
+        list-style-type:disc;
+        span{color:#141414;}
+    }
+}

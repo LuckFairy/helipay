@@ -1,0 +1,89 @@
+@import '_config.scss';
+//账户余额
+.card-content {
+    background: $white-bg;
+    overflow: hidden;
+    margin: 0;
+    border-bottom: 1px solid $line-color;
+    .card-row-title {
+        color: $color9;
+        font-size: $fontsize15;
+        margin: px2(52) auto px2(24);
+        text-align: center;
+    }
+    .card-row-input {
+        position: relative;
+        margin: 0 auto px2(64);
+        text-align: center;
+        .icon_eye_open {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -10px;
+        }
+    }
+    .input-password-a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .input-password-click{
+        width: 154px;
+    }
+    .input-password {
+        font-size: px2(58);
+        color: $color4;
+        border: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+.tixian {
+   font-size: 12px;
+    color: #ff8c6d;
+    margin-left:6px ;
+    line-height: 40px;
+}
+
+//我要收款
+.shoukuan {
+    @include bg('index_bg_pic.png', 100%, 100%);
+    background-size: 100%;
+    border-bottom: none;
+    .shoukuan-row {
+        margin: 0 auto;
+        text-align: center;
+        padding: px2(42) 0 px2(82);
+    }
+    .img-shoukuan {
+        @include bg('index_receivables_bg.png', 120px, 120px);
+        position: relative;
+        .btn-shoukuan {
+            position: absolute;
+            color: #fff;
+            font-size: px2(25);
+            top: 62px;
+            left: 50%;
+            margin-left: -24px;
+        }
+    }
+}
+
+//9宫格样式
+.mui-content {
+    background: $white-bg;
+    padding-bottom: 0;
+    margin-bottom: 50px;
+}
+
+.mui-grid-view.mui-grid-9 {
+    background: $white-bg;
+    margin: 0;
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+    border-bottom: none;
+    padding: 5px 15px;
+}

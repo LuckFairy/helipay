@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>银行卡管理</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" href="css/bankcard.css" />
+		<link rel="stylesheet" type="text/css" href="css/icon.css"/>
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = true;
+		</script>
+		
+	</head>
+
+	<body>
+	
+		<!--内容页-->
+		<div class="mui-content">
+			<div class="gap10"></div>
+			<!--结算卡永远只有一张，没有的时候出现+号图标，有的时候就没有-->
+				<ul class="table-view">
+					<li class="table-view-cell p">
+						结算卡
+						<a href="html/bc_jiesuan.html" class="open-link mui-pull-right">
+							<span class="icon icon_card_plus"></span>
+						</a>
+					</li>
+				<!--<li class="table-view-cell mui-media bank-list card_bg_red a-n">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">
+							<img src="images/my_code.png" alt="" />
+						</div>
+						<div class="mui-media-body white">
+							招商银行（结算卡）
+							<span class="icon icon_kuaijiezhifu mui-pull-right"></span>
+							<p class="mui-ellipsis">储蓄卡</p>
+							<p class="mui-ellipsis mui-pull-right p-r">**** **** **** 3333</p>
+						</div>
+					</a>
+				</li>--> 
+				
+			</ul>
+			<div class="gap10"></div>
+			<ul class="table-view">
+					<li class="table-view-cell p">
+						交易卡
+						<a href="html/bc_trade.html" class="open-link mui-pull-right">
+							<span class="icon icon_card_plus "></span>
+						</a>
+					</li>
+				<li class="table-view-cell mui-media bank-list card_bg_blue a-n">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">
+							<img src="images/my_code.png" alt="" />
+						</div>
+						<div class="mui-media-body white">
+							中国建设银行（交易卡）
+							<span class="icon icon_kuaijiezhifu mui-pull-right"></span>
+							<p class="mui-ellipsis">储蓄卡</p>
+							<p class="mui-ellipsis mui-pull-right p-r">**** **** **** 3333</p>
+						</div>
+					</a>
+				</li>
+				<li class="table-view-cell mui-media bank-list card_bg_green a-n">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">
+							<img src="images/my_code.png" alt="" />
+						</div>
+						<div class="mui-media-body white">
+							农业银行（交易卡）
+							<span class="icon icon_kuaijiezhifu mui-pull-right"></span>
+							<p class="mui-ellipsis">储蓄卡</p>
+							<p class="mui-ellipsis mui-pull-right p-r">**** **** **** 3333</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+
+</html>

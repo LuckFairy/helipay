@@ -1,0 +1,40 @@
+.table-view .table-view-cell:first-of-type {
+  padding: 8px 0;
+  margin-left: -15px; }
+
+.table-view:first-of-type .table-view-cell:not(:first-of-type) {
+  text-align: center;
+  padding: 13px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .table-view:first-of-type .table-view-cell:not(:first-of-type) span {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    position: relative; }
+
+.b-r:after {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  height: 60px;
+  width: 1px;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #f3f3f3; }
+
+.list {
+  padding: 18px 9px 20px; }
+  .list li {
+    color: #43cfe8;
+    list-style-type: disc; }
+    .list li span {
+      color: #141414; }

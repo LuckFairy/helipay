@@ -1,0 +1,23 @@
+p {
+  color: inherit; }
+
+ul, li {
+  padding: 0;
+  margin: 0; }
+
+.head-group {
+  background: #ff4c4c url(../images/card_bg_head.png) no-repeat center/cover;
+  height: 143px;
+  overflow: hidden;
+  padding: 0 15px; }
+  .head-group .head-group-cell {
+    padding-top: 32px; }
+    .head-group .head-group-cell a {
+      color: #fff;
+      display: block;
+      overflow: hidden; }
+    .head-group .head-group-cell .mui-media-body {
+      margin-left: 92px; }
+
+.table-view .table-view-cell {
+  padding: 15px 0; }

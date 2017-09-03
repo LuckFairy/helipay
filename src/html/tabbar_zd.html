@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>账单</title>
+		<!--页面根路径-->
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/index_quick.css" />
+		<link rel="stylesheet" type="text/css" href="css/tabbar_zd.css" />
+		<style type="text/css">
+			.mui-control-content {
+				height: 100vh;
+				padding: 45px 0 51px;
+			}
+			
+			.mui-scroll-wrapper {
+				padding: 45px 0 51px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--内容页-->
+		<div class="mui-content">
+
+			<!--tabar-->
+			<div class="mui-bar bar">
+				<a class="mui-col-sm-6 mui-col-xs-6 mui-active line-r" href="#shoukuan">
+					<div class="tab-label ">
+						<span>收款</span>
+					</div>
+				</a>
+
+				<a class="mui-col-sm-6 mui-col-xs-6" href="#tixian">
+					<div class="tab-label">
+						<span>提现</span>
+					</div>
+				</a>
+			</div>
+
+			<!--菜单页面-->
+			<div id="shoukuan" class="mui-control-content mui-scroll-wrapper mui-active pullrefresh">
+				<!--没有数据加载的时候显示,删除f-dn类-->
+				<div class="no-tips f-dn">
+					暂无交易明细，立即<a href="html/sk_my.html" class="open-link blue">我要收款</a>
+				</div>
+				<div class="pull-wrapper">
+					<div class="gap p-l">
+						本月
+					</div>
+					<ul class="table-view">
+						<li class="table-view-cell open-link" href="html/zd_view_fail.html">
+							<div class="img f-fl">
+								<img src="images/bill_kuaijie.png" alt="" />
+							</div>
+							<div class="media-body">
+								<div>
+									<span>快捷</span>
+									<span class="mui-pull-right">
+										100
+									</span>
+								</div>
+								<p class="mui-ellipsis">
+									<span>今天</span> <span class="time">06:12</span>
+									<!--交易失败添加red类-->
+									<span class="mui-pull-right red">
+										交易失败
+									</span>
+								</p>
+							</div>
+						</li>
+						<li class="table-view-cell open-link" href="html/zd_view_ing.html">
+							<div class="img f-fl">
+								<img src="images/bill_kuaijie.png" alt="" />
+							</div>
+							<div class="media-body">
+								<div>
+									<span>快捷</span>
+									<span class="mui-pull-right">
+										100
+									</span>
+								</div>
+								<p class="mui-ellipsis">
+									<span>昨天</span> <span class="time">06:12</span>
+									<!--处理中添加orange类-->
+									<span class="mui-pull-right orange">
+										处理中
+									</span>
+								</p>
+							</div>
+						</li>
+						<li class="table-view-cell open-link" href="html/zd_view_success.html">
+							<div class="img f-fl">
+								<img src="images/bill_yinlian.png" alt="" />
+							</div>
+							<div class="media-body">
+								<div>
+									<span>银联</span>
+									<span class="mui-pull-right">
+										+100
+									</span>
+								</div>
+								<p class="mui-ellipsis">
+									<span>08-03</span> <span class="time">06:12</span>
+									<span class="mui-pull-right">
+										手续费1.00
+									</span>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="tixian" class="mui-control-content mui-scroll-wrapper pullrefresh">
+				<div class="no-tips f-dn">
+					暂无交易明细，立即<a href="html/rate_my.html" class="open-link blue">查看余额</a>
+				</div>
+				<div class="pull-wrapper">
+					<div class="gap p-l">
+						7月
+					</div>
+					<ul class="table-view">
+						<li class="table-view-cell open-link" href="html/tx_view_fail.html">
+							<div class="img f-fl">
+								<img src="images/bill_kuaijie.png" alt="" />
+							</div>
+							<div class="media-body">
+								<div>
+									<span>提现</span>
+									<span class="mui-pull-right">
+										100
+									</span>
+								</div>
+								<p class="mui-ellipsis">
+									<span>今天</span> <span class="time">06:12</span>
+									<!--交易失败添加red类-->
+									<span class="mui-pull-right red">
+										交易失败
+									</span>
+								</p>
+							</div>
+						</li>
+						<li class="table-view-cell open-link" href="html/tx_view_ing.html">
+							<div class="img f-fl">
+								<img src="images/bill_kuaijie.png" alt="" />
+							</div>
+							<div class="media-body">
+								<div>
+									<span>提现</span>
+									<span class="mui-pull-right">
+										100
+									</span>
+								</div>
+								<p class="mui-ellipsis">
+									<span>昨天</span> <span class="time">06:12</span>
+									<!--处理中添加orange类-->
+									<span class="mui-pull-right orange">
+										处理中
+									</span>
+								</p>
+							</div>
+						</li>
+						<li class="table-view-cell open-link" href="html/tx_view_success.html">
+							<div class="img f-fl">
+								<img src="images/bill_yinlian.png" alt="" />
+							</div>
+							<div class="media-body">
+								<div>
+									<span>提现</span>
+									<span class="mui-pull-right">
+										+100
+									</span>
+								</div>
+								<p class="mui-ellipsis">
+									<span>08-03</span> <span class="time">06:12</span>
+									<span class="mui-pull-right">
+										手续费1.00
+									</span>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+		<script src="js/footer.js"></script>
+		<script src="js/zepto-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			var tabList = $('.bar>a');
+			var $tab_content = $('.mui-control-content');
+			var skList = $('#shoukuan .table-view-cell');
+			var tiList = $('#tixian .table-view-cell');
+			tabList.on('tap', function() {
+				var id = $(this).attr('href');
+				$tab_content.removeClass('mui-active');
+				$(id).addClass('mui-active');
+				if(!$(this).hasClass('mui-active')) {
+					$(this).addClass('mui-active').siblings().removeClass('mui-active');
+				}
+			})
+			
+//			tiList.on('tap',function(){
+//				sessionStorage.resultTitle = '提现';
+//			})
+		</script>
+	</body>
+
+</html>

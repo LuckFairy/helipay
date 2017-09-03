@@ -1,0 +1,94 @@
+@import "_config.scss";
+//底部图标样式
+.icon_home {
+    @include bg('icon_index_nomal.png');
+}
+
+.icon_bill {
+    @include bg('icon_bill_nomal.png');
+}
+
+.icon_my {
+    @include bg('icon_my.png');
+}
+
+.mui-tab-item.mui-active {
+    .icon_home {
+        @include bg('icon_index_selected.png');
+        display: block;
+    }
+    .icon_bill {
+        @include bg('icon_bill_selected.png');
+        display: block;
+    }
+    .icon_my {
+        @include bg('icon_my_selected.png');
+        display: block;
+    }
+}
+
+//我要提款图标
+.icon_eye_open{
+    @include bg('index_eye_open.png',36px,22px);
+}
+.card-row-input.mui-active{
+    .icon_eye_open{
+        @include bg('index_eye_close.png',36px,22px);
+    }
+}
+.icon_index_rate{
+    @include bg('index_rate.png',25px,22px);
+}
+.icon_index_card{
+    @include bg('index_card.png',25px,20px);
+}
+
+//交易结果图标
+.icon_pay_explain{
+    @include bg('pay_explain.png',14px,17px);
+}
+.icon_pay_gray{
+    @include bg('pay_gray.png',17px,17px);
+}
+.icon_pay_success{
+    @include bg('pay_success.png',17px,17px);
+}
+.icon_pay_secleted{
+    @include bg('pay_secleted.png',17px,17px);
+}
+.icon_my_account{
+    @include bg('my_account.png',15px,15px);
+}
+.icon_my_card{
+    @include bg('my_card.png',15px,15px);
+}
+.icon_my_code{
+    @include bg('my_code.png',15px,15px);
+}
+.icon_my_fee{
+    @include bg('my_fee.png',15px,15px);
+}
+.icon_my_phone{
+     @include bg('my_phone.png',15px,15px);
+}
+.icon_my_user{
+    @include bg('my_user.png',74px,74px);
+}
+.icon_line_red{
+    @include bg('line_red@2x.png',4px,16px);
+}
+.icon_card_plus{
+    @include bg('card_plus.png',19px,19px);
+}
+.icon_kuaijiezhifu{
+    @include bg('kuaijiezhifu.png',42px,11px);
+}
+.icon_tied_ps{
+    @include bg('tied_ps.png',12px,12px);
+}
+.icon_receivables_quick{
+    @include bg('receivables_quick.png',24px,20px);
+}
+.icon_receivables_yinlian{
+    @include bg('receivables_yinlian.png',24px,20px);
+}

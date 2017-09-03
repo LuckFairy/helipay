@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html style="overflow: hidden;">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>付款</title>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			.f-dn{display: none;}
+		</style>
+	</head>
+
+	<body >
+		<div class="mui-page-content  scroll-container mui-scroll-wrapper">
+			
+				<div class="page mui-scroll">
+
+					<div class="mui-row result-money">
+						<div class="mui-col-sm-12 mui-col-xs-12">
+							<li class="mui-table-view-cell">
+								<h1>￥2.00</h1>
+							</li>
+						</div>
+					</div>
+
+					<!--****表单-->
+					<form class="mui-input-group input-group-content">
+						<div class="mui-input-row">
+							<label><span class="icon icon-payee"></span>收款方</label>
+							<input id='bank-payee' type="text" disabled="disabled" class=" mui-input" value="合利宝商城">
+						</div>
+
+						<div class="mui-input-row">
+							<label><span class="icon icon-card"></span>卡号</label>
+							<input id='bank-num' type="number" class=" mui-input" value="0450273450820347" disabled="disabled">
+						</div>
+
+						<div class="mui-input-row mui-table-view">
+							<label><span class="icon icon-card"></span>银行</label>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right" href="#bankCard" id="bank-id"><span>选择银行</span></a>
+							</li>
+						</div>
+
+						<div class="mui-input-row">
+							<label><span class="icon icon-name"></span>姓名</label>
+							<input id='bank-owner' type="text" class=" mui-input" placeholder="填写姓名" required>
+						</div>
+						
+						
+						<div class="mui-input-row" >
+							<label><span class="icon icon-date"></span>有效期</label>
+							<input id='bank-date' type="text" class=" mui-input" placeholder="输入20170915"  maxlength="8" required>
+						</div>
+						<div class="mui-input-row" >
+							<label><span class="icon icon-cvv"></span>CVV2</label>
+							<input id='bank-cvv2' type="text" class=" mui-input" placeholder="卡背后末三位" maxlength="3" required>
+						</div>
+						
+						<div class="mui-input-row">
+							<label><span class="icon icon-id"></span>身份证</label>
+							<input id='bank-id' type="text" class=" mui-input" placeholder="身份证件号">
+						</div>
+						<div class="mui-input-row">
+							<label><span class="icon icon-tel"></span>手机号</label>
+							<input id='bank-tel' type="number" class=" mui-input" placeholder="银行预留手机号" maxlength="11" pattern="[0-9]" required>
+						</div>
+						<div class="mui-input-row result-code">
+							<label><span class="icon icon-msg"></span>短信验证</label>
+							<input id="bank-msg" type="text" class=" mui-input" data-input-clear="2" required>
+							<button type="button" class="mui-btn btn-msg">获取验证码</button>
+						</div>
+					</form>
+
+					<!--底部-->
+					<footer >
+						<div class="mui-content-padded">
+							<button id='btn-pay' class="mui-btn mui-btn-block mui-btn-danger" onclick="location.href='./paymentFinished.html'">立即支付</button>
+						</div>
+						<div class="mui-row logo">
+							<div class="mui-col-sm-12 mui-col-xs-12">
+								<li class="mui-table-view-cell">
+									<!--<div id="logo">
+									<img src="../images/logo.png" alt="" />
+								</div>-->
+									<div><span>使用即表示你同意《合利宝用户协议》</span><i class="icon icon-logo"></i></div>
+								</li>
+
+							</div>
+						</div>
+
+					</footer>
+
+				</div>
+			
+		</div>
+		<!--单页面开始-->
+		<div id="bankCard" class="mui-page mui-scroll-wrapper page-item" style="display: none;">
+
+			<form class="mui-input-group  mui-table-view-radio bank-card-type">
+				<div class="mui-input-row ">
+					<label>选择银行</label>
+				</div>
+				<div class="mui-input-row mui-radio mui-selected">
+					<label>借记卡</label>
+					<input name="checkbox1" value="01" type="radio">
+				</div>
+				<div class="mui-input-row mui-radio">
+					<label>信用卡</label>
+					<input name="checkbox1" value="02" type="radio" >
+				</div>
+			</form>
+
+			<form class="mui-input-group  mui-table-view mui-table-view-radio bank-card-list">
+				<div class="mui-input-row ">
+					<label>选择银行</label>
+				</div>
+				<div class="mui-input-row mui-radio  ">
+					<label>工商银行</label>
+					<input name="checkbox2" value="03" type="radio" >
+				</div>
+				<div class="mui-input-row mui-radio ">
+					<label>建设银行</label>
+					<input name="checkbox2" value="04" type="radio" >
+				</div>
+			</form>
+
+			<!--底部-->
+			<footer  class="fixed-bottom">
+				<div class="mui-content-padded">
+					<button id='btn-back' class="mui-btn mui-btn-block mui-btn-danger" >完成</button>
+				</div>
+			</footer>
+		</div>
+		<!--单页面结束-->
+		<script src="../js/mui.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/zepto-1.2.0.js"></script>
+		<script src="../js/paymentFirstSure.js"></script>
+		<!--window.location.replace('./paymentFinished.html')-->
+		<script type="text/javascript">
+//			location.replace('');
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<base href="./" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/password.css"/>
+	</head>
+
+	<body>
+
+		<!--内容页-->
+		<div class="mui-content">
+				<div class="gap">
+					<img  src="images/line_red@2x.png"/>
+					请输入手机尾号 <span class="blue">1234</span> 收到的验证码。
+				</div>
+	        <div class="mui-input-group input-group a-n b-n">
+	        	<div class="mui-input-row input-row">
+	                <label>帐号</label>
+	                <input  type="text" class="mui-input-clear" placeholder="输入手机号" >
+	            </div>
+				<div class="mui-input-row input-row a-n active">
+	                <label>验证码</label>
+	                <div class="input-row-div">
+	                	<input  type="text" class="mui-input-clear mui-input" placeholder="输入验证码">
+	                </div>
+	                <button type="button" class=" msg-btn white-btn ">获取验证码</button>
+	            </div>
+
+			</div>
+			
+			<div class="mui-content-padded">
+				<button id='quick-next' class="red-btn">下一步</button>
+			</div>
+		</div>
+		<script src="js/dataConfig.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			var check_flag = true;//验证成功
+			var nxt_btn = mui('#quick-next');
+			
+			nxt_btn[0].addEventListener('tap',function(){
+				if(check_flag){
+					mui.openWindow('html/psw_set.html');
+				}
+			})
+		</script>
+	</body>
+
+</html>

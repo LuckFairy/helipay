@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的账户</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/result.css" />
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = true;
+		</script>
+		<style type="text/css">
+			.card-content{
+				height: 123px;
+				background: url('images/card_bg_zh.png') no-repeat center/100% 100%;
+				padding-top: 34px;
+				
+			}
+			.card-row-title{
+				font-size: 13px;
+			}
+			.card-row:nth-child(2){
+				margin-top: 17px;
+				font-size: 38px;
+			}
+		</style>
+	</head>
+
+	<body class="white-bg">
+	
+		<!--内容页-->
+		<div class="mui-content white-bg">
+			<div class="card-content white p-l">
+				<div class="card-row card-row-title">账户余额(元)</div>
+				<div class="card-row">10000.00</div>
+			</div>
+			
+			<!--后台根据数据来显示，有数据说明就显示，没有就隐藏-->
+				<div class="pay-explain m-l m-r">
+					<div class="pay-explain-title">
+						<span class="icon icon_pay_explain"></span>说明
+					</div>
+					<div class="pay-explain-txt">
+						提现手续费 0.02%+2元/笔
+					</div>
+				</div>
+			
+			<div class="mui-content-padded" style="margin-top: 51px;" >
+				<a href="html/tx.html" class="open-link">
+					<button class="red-btn full-btn">提现</button>
+				</a>
+			</div>
+		</div>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+
+</html>

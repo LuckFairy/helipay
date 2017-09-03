@@ -1,0 +1,74 @@
+//图片路径
+$url-img:"../images/";
+//字体颜色
+$black-color:#141414;
+$gray-color:#757575;
+$light-gray-color:#bebebe;
+$red-color:#ff4c4c;
+$orange-color:#fb6b4f;
+$yellow-color:#fdb943;
+$color9:#999;
+$color4:#444;
+$white-color:#fff;
+$color18:#181818;
+$blue-color:#4aa3ff;
+//字体大小
+$fontsize14:14px;
+$fontsize13:13px;
+$fontsize12:12px;
+$fontsize15:15px;
+//背景颜色
+$gray-bg:#333;
+$white-bg:#fff;
+$gw-bg:#f3f3f3;
+$g8-bg:#f8f8f8;
+
+//border线的颜色
+$line-color:#f3f3f3;
+
+//背景图片居中
+$bc-img:'60x60.gif'!default;
+$bc-width:19px !default;
+$bc-height:19px !default;
+@mixin bg($bc-img,$bg-width:$bc-width,$bg-height:$bc-height){
+    display: inline-block;
+    width: $bg-width;
+    height:$bg-height;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(#{$url-img}#{$bc-img});
+}
+
+//字体基本样式
+@mixin fontStyle($fontFamily :inherit,$fontSize: $fontsize14,$color: $black-color,$background:$gw-bg) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $color;
+    background:$background;
+    line-height:21px ;
+}
+//头部样式
+@mixin headstyle{
+    color:$black-color;
+    line-height: 43px;
+    font-size: 15px;
+    background:$white-bg;
+}
+//分隔中间样式
+@mixin gapstyle{
+    line-height: 38px;
+    color:#757575;
+    background:$g8-bg;
+    font-size: $fontsize13;
+}
+//list列表样式
+@mixin listStyle{
+    background:$white-bg;
+    padding:5px 0;
+}
+//自动除以2的px
+$jishu:1px/2;
+@function px2($n){
+    @return $n*$jishu;
+}

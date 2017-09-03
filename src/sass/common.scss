@@ -1,0 +1,344 @@
+@import '_config.scss';
+@import 'icon.scss';
+/*万能清除浮动*/
+.f-cb { zoom: 1;}
+.f-cb:after { display: block; clear: both; visibility: hidden; height: 0; overflow: hidden; content: "";}
+.f-dn { display: none;}
+.f-db { display: block;}
+.f-dbb { display: block !important;}
+.f-fl { float: left;}
+.f-fr { float: right;}
+.f-oh { overflow: hidden;}
+.f-pr { position: relative;}
+.f-pa { position: absolute;}
+.f-tac { text-align: center;}
+.f-vm { display: table-cell;vertical-align: middle; }
+ul,li{list-style: none;margin: 0;padding: 0;}
+//整体body .mui-content样式
+body,.mui-content{
+    @include fontStyle;
+}
+a:active{color:#fb6b4f;}
+//input未输入样式
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $light-gray-color; opacity:1; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $light-gray-color;opacity:1;
+}
+input{font-size: inherit;}
+input:-ms-input-placeholder{
+    color: $light-gray-color;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: $light-gray-color;opacity:1;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear, .mui-input-row .mui-input-password~.mui-icon-eye, .mui-input-row .mui-input-speech~.mui-icon-speech
+{
+    opacity: .7;
+    font-size: 18px;
+    right: 15px;
+}
+p{color:$gray-color;}
+.mui-popover.mui-popover-action .mui-table-view .mui-table-view-cell:after{
+    background-color: $line-color;
+    height: 2px;
+    right: 15px;
+    left: 15px;
+}
+//颜色样式
+.blue{color:$blue-color !important;}
+.red{color:$red-color !important;}
+.black{color:$black-color !important;}
+.red-slight{color:$orange-color !important;}
+.orange{color:$yellow-color !important;}
+.gray{color:$gray-color !important;}
+.white{color:$white-bg !important;}
+.white-bg{background: $white-bg !important;}
+.p{padding:15px 0 !important;}
+.p9{padding:9px 0 !important;}
+.p-lr{padding: 0 15px !important;}
+.p-l{padding-left: 15px !important; }
+.p-r{padding-right: 15px !important;}
+.m-l{margin-left: 15px !important;}
+.m-r{margin-right: 15px !important;}
+.m-t{margin-top: 15px !important;}
+.a-n:after{height: 0 !important;background-color: transparent !important;}
+.b-n:before{height: 0 !important;background-color: transparent !important;}
+.opacity{opacity: 0.7 !important;}
+.b:before{
+    position: absolute;
+                right: 0;
+                top: 0;
+                left: 0;
+                height: 2px;
+                content: '';
+                -webkit-transform: scaleY(.5);
+                transform: scaleY(.5);
+                background-color: #f3f3f3;
+}
+.a:after{
+    position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                content: '';
+                -webkit-transform: scaleY(.5);
+                transform: scaleY(.5);
+                background-color: #f3f3f3;
+}
+//头部样式
+.mui-bar.mui-bar-nav{
+   @include headstyle;
+   box-shadow: none;
+   &:after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                content: '';
+                -webkit-transform: scaleY(.5);
+                transform: scaleY(.5);
+                background-color: #f3f3f3;
+            }
+   .mui-icon{
+       color:$light-gray-color;
+   }
+   .mui-title{
+       color:inherit;
+       font-size: inherit;
+   }
+}
+//底部样式
+.mui-bar.bar-footer{
+    background: $white-bg;
+    font-size: 12px;
+        box-shadow: none;
+        border-top: 1px solid $line-color;
+     .mui-tab-item{
+         color:$gray-color;
+     }
+     .mui-tab-item.mui-active{
+         color:$red-color;
+     }
+     .icon{
+        position: relative;
+        top: 3px;
+        width: 19px;
+        height: 19px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 4px;
+     }
+     
+}
+//间隔gap样式
+.gap{
+    @include gapstyle;
+    img{
+        width:4px;
+        height: auto;
+    }
+}
+.gap10{
+    background: $gw-bg;
+    height: 10px;
+}
+.gap15{
+    background: $gw-bg;
+    height: 15px;
+}
+//列表样式
+.table-view{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin:0;
+    background:$white-bg;
+    position: relative;
+    .table-view-cell{
+        @include listStyle;
+        position: relative;
+        &:after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                content: '';
+                -webkit-transform: scaleY(.5);
+                transform: scaleY(.5);
+                background-color: #f3f3f3;
+            }
+        &>.img{
+            line-height: 54px;
+            height:54px;
+            max-width: 19px;
+            margin-right: 13px;
+             img{
+                max-width:19px;
+                height: 19px;
+                vertical-align: middle;
+            }
+            
+        }
+       a{color:inherit;display: block;
+       .icon{
+           margin-right: 13px;
+       }}
+        .media-body{
+                position: relative;
+                display: block;
+                overflow: hidden;
+                color: inherit;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                line-height: 32px;
+                p{
+                    line-height: 12px;
+                    font-size: 12px;
+                    color: $gray-color;
+                }
+        }
+    }
+}
+
+//头部右边样式
+.header-right{
+    color:#fb6b4f;
+    font-size: $fontsize13;
+}
+//button样式
+//底部button的wrap
+.mui-content-padded{
+    margin:0 15px;
+    margin-top:39px;
+    a{
+        display: block;
+        button{
+            width: 100%;
+        }
+    }
+
+}
+//红底白字
+.red-btn{
+    color: #fff;
+    background: $red-color;
+    border: 1px solid $red-color;
+    height: 39px; 
+}
+//白底红字
+.white-btn{
+     border: 1px solid $red-color;
+    color: $red-color;
+    height: 39px; 
+}
+//100%button底部
+.full-btn{
+    width: 100%;
+}
+//输入框input-group样式
+.mui-input-group .mui-input-row:after{
+    margin-right: 15px;
+    background: #F3F3F3;
+}
+.input-group{
+    position: relative;
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+   .input-row{
+       height: 50px;
+       line-height: 50px;
+       display: flex;
+       justify-content:space-between;
+       align-items: center;
+       label{
+           float: left;
+           padding:0 30px 0 15px;
+           line-height: inherit;
+           width: 87px;
+           font-family: inherit;
+           
+       }
+       .input-row-div{
+           position: relative;
+           float: left;
+           width: 53%;
+           flex: 1;
+           height: 50px;
+           line-height: 50px;
+           input{
+               width: 100%;
+           }
+       }
+       .mui-input-clear ~ .mui-icon-clear{
+           top:15px;
+           width: 20px;
+           height: 20px;
+       }
+       input{
+               width: 60%;
+               height: 50px;
+              float:left;
+              border:0;
+              padding-right: 5px;
+              padding-left: 0; 
+              margin-bottom: 0;
+           }
+       
+       button{
+           float: right;
+           padding:0;
+           margin-right: 15px;
+           height: 24px;
+            width: 70px;
+            line-height: 22px;
+            border-radius: 24px;
+            font-size: $fontsize12;
+       }
+   }
+   .active{
+       button{
+           color:$light-gray-color;
+           border-color: $light-gray-color;
+       }
+   }
+}
+//右箭头
+.navigate-right:after{
+    font-family: Muiicons;
+    font-size: inherit;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #bbb;
+    -webkit-font-smoothing: antialiased;
+    right: 0;
+    content: '\e583';
+}
+
+//单选框、复选框样式
+.mui-table-view-radio .mui-table-view-cell .mui-navigate-right:after{
+    content: '\e411';
+     font-size: 22px;
+     color:#efefef;
+}
+.mui-table-view-radio .mui-table-view-cell.mui-selected .mui-navigate-right:after{
+    content: '\e442';
+    color:$orange-color;
+     font-size: 22px;
+}
+.popover-view .mui-navigate-right:after {
+  content: '\e442';
+    color:$orange-color;
+    font-size: 22px;
+    }

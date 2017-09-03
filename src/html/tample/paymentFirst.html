@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>付款</title>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+			}
+			.mui-input-group{
+				padding: 0 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content   result-content">
+			<div class="mui-scroll">
+				
+					<div class="mui-row result-money">
+						<div class="mui-col-sm-12 mui-col-xs-12">
+							<li class="mui-table-view-cell">
+								<h1>￥2</h1>
+							</li>
+						</div>
+					</div>
+			
+				<!--****表单-->
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label> <span class="icon icon-payee"></span>收款方</label>
+						<input id='bank-payee' type="text" class=" mui-input" value="合利宝商城" disabled="disabled">
+					</div>
+
+					<div class="mui-input-row">
+						<label><span class="icon icon-card"></span>卡号</label>
+						<input id='bank-num' type="number" class=" mui-input" placeholder="填写银行卡号" >
+					</div>
+
+				</form>
+				
+				<!--底部-->
+				<footer	style="margin-top:30%;">
+					<div class="mui-content-padded">
+						<button id='btn-next' class="mui-btn mui-btn-block mui-btn-danger">下一步</button>
+					</div>
+					<!--
+					<div class="mui-row logo">
+						<div class="mui-col-sm-12 mui-col-xs-12">
+							<li class="mui-table-view-cell">
+								<div id="logo">
+									<img src="../images/logo.png" alt="" />
+								</div>
+								<p>使用即表示你同意合利宝协议</p>
+							</li>
+						</div>
+					</div>
+					-->
+				</footer>
+			</div>
+		</div>
+		<script src="../js/mui.js"></script>
+		<script src="../js/zepto-1.2.0.js"></script>
+		<script src="../js/common.js"></script>
+		<script type="text/javascript">
+			mui.ready(function(){
+				var btnNext = mui('#btn-next');
+				if(json.creditCard){
+					json.debitCard=false;
+				}else{
+					json.creditCard = false;
+				}
+				btnNext[0].addEventListener('tap',function(){
+					mui(".mui-input-group input").each(function() {
+					//若当前input为空，则alert提醒 
+					if(!this.value || this.value.trim() == "") {
+					    var label = this.previousElementSibling;
+					    mui.alert(label.innerText + "不允许为空");
+					    json.check = false;
+					    return false;
+					}else{
+						json.check = true;
+					}
+					}); //校验通过，继续执行业务逻辑 
+					if(json.check){
+//					    mui.alert('验证通过!')
+					    location.href = 'paymentFirstSure.html';
+					}
+				})	
+				 
+				})
+			
+		</script>
+	</body>
+
+</html>

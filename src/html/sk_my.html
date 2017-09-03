@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我要收款</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/sk_my.css" />
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.bc_list_flag = true;
+		</script>
+	</head>
+
+	<body>
+		<div class="mui-bar mui-bar-nav">
+			<a href="index.html" class="open-link mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">我要收款</h1>
+			<a href="html/bc_list_credit.html" class="mui-pull-right open-link header-right">支持银行</a>
+		</div>
+		<!--内容页-->
+		<div class="mui-content ">
+			<div class="mui-scroll">
+				<div class="input-group ">
+					<div class="input-group-title p-l">
+						<div class="label ">收款金额</div>
+						<div class="input-row mui-input-row">
+							￥
+							<input type="number" id="sk-input"  class="mui-input-clear" min="3" max="100000" >
+						</div>
+						<!--字随着输入的变化而变化-->
+						<div class="tip"></div>
+					</div>
+				</div>
+				<ul class="table-view  b-an b-bn m-b">
+					<li class="table-view-cell a-n">
+						<a class="navigate-right" href="javascript:;" id="js-btn">
+							结算方式
+							<span class="mui-pull-right gray m-r" id="jsInfo">闪电到账</span>
+						</a>
+					</li>
+				</ul>
+				<div class="gap10"></div>
+				<ul class="mui-table-view view mui-table-view-radio a-n b-n">
+					<li class="mui-table-view-cell">
+						选择支付方式
+					</li>
+					<!--data数据为0快捷，1是银联-->
+					<li class="mui-table-view-cell " data='0'>
+						<a class="mui-navigate-right">
+							<span class="icon icon_receivables_quick"></span>
+							<span>快捷支付</span>
+							<span class="gray">0.05%</span>
+							<span class="gray">单笔20000元</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell " data='1'>
+						<a class="mui-navigate-right">
+							<span class="icon icon_receivables_yinlian"></span>
+							<span>银联在线</span>
+							<span class="gray">0.04%</span>
+							<span class="gray">单笔20000元</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell" data='1'>
+						<a class="mui-navigate-right">
+							<span class="icon icon_receivables_yinlian"></span>
+							<span>银联在线</span>
+							<span class="gray">0.05%</span>
+							<span class="gray">单笔20000元</span>
+						</a>
+					</li>
+				</ul>
+				<div class="mui-content-padded">
+					<a href="javacript:;">
+						<button id="sure-btn" class="red-btn full-btn opacity">确定</button>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<!--结算方式弹窗-->
+		<div id="jiesuan" class="mui-popover mui-popover-action mui-popover-bottom ">
+			<ul class="mui-table-view black">
+				<li class="mui-table-view-cell">
+					<a href="#" data='正常到账'>正常到账（个人账户需提现)</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#" data='闪电到账'>闪电到账（秒到结算卡)</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view black">
+				<li class="mui-table-view-cell">
+					<a href="#jiesuan"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<!--银行列表弹窗-->
+		<div id="check-card" class="mui-popover mui-popover-action mui-popover-bottom popover-bank">
+			<div class="popover-title">
+				选择支付银行卡
+				<a href="#check-card " class="gray">
+					<span class="mui-icon mui-icon-closeempty close-popoper"></span>
+				</a>
+			</div>
+			<ul class="mui-table-view  popover-view check-bank">
+				<li class="mui-table-view-cell mui-media ">
+					<!--a标签有mui-navigate-right类表示选中状态-->
+					<a >
+						<img class="mui-media-object mui-pull-left" src="images/detailed_yinlian.png">
+						<div class="mui-media-body">
+							工行银行信用卡(2222)
+							<p class="mui-ellipsis">限额单笔20000元 单日50000元</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a>
+						<img class="mui-media-object mui-pull-left" src="images/detailed_yinlian.png">
+						<div class="mui-media-body">
+							建设银行信用卡(2222)
+							<p class="mui-ellipsis">限额单笔20000元 单日50000元</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a>
+						<img class="mui-media-object mui-pull-left" src="images/detailed_yinlian.png">
+						<div class="mui-media-body">
+							农业银行信用卡（2222）
+							<p class="mui-ellipsis">限额单笔20000元 单日50000元</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media ">
+					<a class="" data="4">
+						<img class="mui-media-object mui-pull-left" src="images/detailed_yinlian.png">
+						<div class="mui-media-body">
+							农业银行信用卡（2222）
+							<p class="mui-ellipsis">限额单笔20000元 单日50000元</p>
+						</div>
+					</a>
+				</li>
+
+			</ul>
+
+			<ul class="mui-table-view ">
+				<li class="mui-table-view-cell">
+					<a href="html/bc_trade.html" class="mui-navigate-right open-link">
+						<span class="icon icon_card_plus mui-pull-left"></span>
+						<div class="mui-media-body">
+							添加银行卡
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="mui-table-view no-click">
+				<!--不能点击的卡列表-->
+				<div class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/detailed_yinlian.png">
+						<div class="mui-media-body ">
+							农业银行信用卡（2222）
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/native.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js"></script>
+		<script src="js/zepto-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var sk_input = document.getElementById('sk-input');
+			var jsInfo = document.getElementById('jsInfo');
+			var sure_btn = mui('#sure-btn')[0];
+			var tip_info = mui('.tip')[0];
+			var js_btn = mui('#js-btn')[0];
+			var input_flag = false;
+			var check_flag = false;
+			 window.num = {
+				min:3,//最低限额
+				max:10000,//最高额度
+				balance:10000,//账户余额
+				rate:0.006,//手续费
+			};
+			sk_input.focus();
+			js_btn.addEventListener('tap',function(){
+				sk_input.blur();
+				mui.later(function(){
+					mui('#jiesuan').popover('toggle');
+				},500)
+			})
+			//结算方式跳窗选择
+			mui('body').on('tap', '#jiesuan li>a', function(e) {
+				var data = this.getAttribute('data');
+				if(data!=null&&data.length>0){
+					jsInfo.innerHTML = data;
+				}
+				mui('#jiesuan').popover('toggle');
+			})
+			//选择支付方式,默认快捷支付
+			var obj = {
+				type:0,//0为快捷方式,1为银联
+				$url:'',//跳转链接
+			};
+			
+			document.querySelector('.mui-table-view.mui-table-view-radio').addEventListener('selected', function(e) {
+				var type = e.detail.el.getAttribute('data');console.info(type)
+					//根据type选择银行卡跳链
+					if(type==1){
+						obj={
+							type:1,
+							$url:'银联链接',
+							};
+						window.num={
+							min:3,//最低限额
+							max:100000,//最高额度
+							balance:10000,//账户余额
+							rate:0.004,//手续费
+						}
+						
+					}else{
+						obj={
+							type:1,
+							$url:'html/qck_msg.html',
+							};
+						window.num={
+							min:3,//最低限额
+							max:20000,//最高额度
+							balance:10000,//账户余额
+							rate:0.006,//手续费
+						}
+					}
+					changeInput(sk_input.value,window.num);
+					//金额输入框
+					sk_input.addEventListener('input',function(){
+						var v = this.value;
+						changeInput(v,window.num);
+					})
+				
+					function changeInput(v,opt){
+						tip_info.innerHTML = '到账金额'+(v-v*opt.rate)+' '+'手续费'+v*opt.rate;
+						if(v<opt.min){
+							tip_info.innerHTML = '收款金额最小3元';
+							check_flag = false;
+						} else if(v>opt.max){
+							tip_info.innerHTML = '收款金额超出业务限额';
+							check_flag = false;
+						}else{
+							check_flag = true;
+						}
+						if(check_flag&&input_flag){
+							sure_btn.className = 'red-btn full-btn';
+						}else{
+							sure_btn.className = 'red-btn full-btn opacity';
+						}
+						return false;
+					}
+			});
+			if(sk_input.value!=null||sk_input.value>0){
+				if(sk_input.value>=num.min&&sk_input.value<=num.max){
+					input_flag = true;
+				}
+			}
+			sk_input.addEventListener('input',function(){
+				var v = this.value;
+					if (v > window.num.max) {
+				        this.value = v.toString().slice(0,6); 
+				        tip_info.innerHTML = '收款金额超出业务限额';
+				        input_flag = false;
+				    }else if(v<window.num.min){
+				    	tip_info.innerHTML = '收款金额最小3元';
+				    	input_flag = false;
+				    }else{
+				    	tip_info.innerHTML ='';
+				    	input_flag = true;
+				    }
+			})
+			//确定按钮
+			sure_btn.addEventListener('tap',function(){
+				if(check_flag&&input_flag){
+					mui('#check-card').popover('toggle');
+				}
+			})
+			//选择支付银行卡
+			mui('.mui-table-view.check-bank').on('tap','li',function(e){
+				$(this).find('a').addClass('mui-navigate-right');
+				if(obj.$url=='银联链接'){
+					mui.toast(obj.$url)
+				}else{
+					mui.openWindow(obj.$url);
+				}
+			})
+			
+
+				
+			
+		</script>
+	</body>
+
+</html>

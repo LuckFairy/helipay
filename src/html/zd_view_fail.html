@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>交易详情</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/tabbar_zd.css"/>
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = true;
+		</script>
+		<style>
+			ul.table-view:first-of-type li:last-child{
+					padding-bottom: 17px;
+			}
+			ul.table-view:nth-of-type(2){
+				padding-top: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<!--内容页-->
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="show-group">
+				<!--快捷支付和银联支付详细页一样的样式，改变快捷支付图片和名称就好-->
+				<div class="show-group-title">
+					<img src="images/detailed_kuaijie.png"/>
+					<span id="title">快捷支付</span>
+				</div>
+				<div class="show-group-count">11000.00</div>
+				<div class="show-group-ph red">交易失败</div>
+			</div>
+			<ul class="table-view" >
+				<li class="table-view-cell a-n">
+					<label class="gray">付款账户</label>
+					<span class="mui-pull-right">建设银行（1234）</span>
+				</li>
+				<li class="table-view-cell a-n">
+					<label class="gray">结算类型</label>
+					<span class="mui-pull-right">正常到账</span>
+				</li>
+				<li class="table-view-cell">
+					<label class="gray">失败原因</label>
+					<span class="mui-pull-right">xxxx</span>
+				</li>
+				
+			</ul>
+			<ul class="table-view" style="padding-top: 8px;">
+				<li class="table-view-cell a-n">
+					<label class="gray">订单号</label>
+					<span class="mui-pull-right">14455577457</span>
+				</li>
+				<li class="table-view-cell a-n">
+					<label class="gray">创建时间</label>
+					<span class="mui-pull-right">2017-03-31 18:35:23</span>
+				</li>
+				<li class="table-view-cell a-n">
+					<label class="gray">完成时间</label>
+					<span class="mui-pull-right">2017-03-31 18:35:23</span>
+				</li>
+			</ul>
+			<div class="gap10"></div>
+				<!--轮播图-->
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="images/bill_banner.png">
+								<p class="mui-slider-title">静静看这世界</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/bill_banner.png">
+								<p class="mui-slider-title">幸福就是可以一起睡觉</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/bill_banner.png">
+								<p class="mui-slider-title">想要一间这样的木屋，静静的喝咖啡</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/bill_banner.png">
+								<p class="mui-slider-title">Color of SIP CBD</p>
+							</a>
+						</div>
+				
+					</div>
+					
+				</div>
+				<!--轮播图-->
+		</div>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			if(sessionStorage.resultTitle){
+				var title = sessionStorage.resultTitle;
+				mui('#title')[0].innerHTML = title;
+				sessionStorage.removeItem('resultTitle');
+			}
+		</script>
+	</body>
+
+</html>

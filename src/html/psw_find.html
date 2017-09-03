@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>找回提现密码</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/password.css"/>
+		
+	</head>
+
+	<body>
+
+		<!--内容页-->
+		<div class="mui-content">
+			<div class="gap">
+				<img  src="images/line_red@2x.png"/>
+				请输入实名用户 **伟 的完整身份证号
+			</div>
+			<div class="mui-input-group input-group a-n b-n">
+				<div class="mui-input-row input-row a-n">
+	                <label>身份证</label>
+	                <input id='id-input' type="text" class="mui-input-clear" placeholder="输入身份证号" maxlength="18">
+	            </div>
+	        </div>
+	            
+			<div class="p-lr m-t gray">遇到问题？请&nbsp;<a class="customer-btn blue">联系客服</a></div>
+			<div class="mui-content-padded">
+				<button id='quick-next' class="red-btn opacity">下一步</button>
+			</div>
+		</div>
+		<script src="js/dataConfig.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/form.js"></script>
+		<script type="text/javascript">
+			var check_flag = false;//验证成功
+			var nxt_btn = mui('#quick-next')[0];
+			var id_put = mui('#id-input')[0];
+			//身份证验证
+			if(id_put.value.length!=0){
+				nxt_btn.className = 'red-btn';
+			}
+			mui('.mui-input-row').on('tap','.mui-icon.mui-icon-clear',function(){
+				nxt_btn.className = 'red-btn opacity';
+			})
+			id_put.addEventListener('input',function(){
+				var v = this.value;
+				if(v==null||v.length==0){
+					nxt_btn.className = 'red-btn opacity';
+				}else{
+					nxt_btn.className = 'red-btn';
+				}
+			})
+			
+			//验证成功跳转
+			nxt_btn.addEventListener('tap',function(){
+				var obj = checkCard(id_put.value);
+				if(obj.flag){
+					mui.openWindow('html/psw_msg.html');
+				}else{
+					mui.alert(obj.txt,' ');
+				}
+				
+			})
+		</script>
+	</body>
+
+</html>

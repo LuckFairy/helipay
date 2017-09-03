@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的账单</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = true;
+		</script>
+		
+	</head>
+
+	<body>
+	
+		<!--内容页-->
+		<div class="mui-content white-bg">
+			<div class="gap10"></div>
+			<ul class="table-view p">
+				<li class="table-view-cell a-n">
+					<span class="icon icon_line_red"></span>
+					账户余额：<span class="red-slight">0.00元</span>
+				</li>
+			</ul>
+			<div class="gap10"></div>
+			<ul class="table-view">
+				<li class="table-view-cell">
+					<span class="icon icon_pay_explain"></span>
+					说明
+				</li>
+				<li class="table-view-cell a-n p9">
+					<span class="gray">提现手续费 0.02%+2元/笔</span>
+					
+				</li>
+			</ul>
+			<div class="p-lr" style="margin-top: 51px;">
+				<a href="html/tx.html" class="open-link">
+					<button class="red-btn" style="width: 100%;">提现</button>
+				</a>
+			</div>
+		</div>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+
+</html>

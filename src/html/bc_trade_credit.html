@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>绑定交易卡</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/password.css"/>
+				
+	</head>
+
+	<body>
+	
+		<!--内容页-->
+		<div class="mui-content">
+			
+			<div class="mui-input-group input-group a-n b-n">
+				<div class="mui-input-row input-row">
+	                <label>卡类型</label>
+	                <input  type="text" class="mui-input-clear" disabled="disabled" value="中国建设银行信用卡">
+	            </div>
+	           <div class="mui-input-row input-row a-n">
+	                <label>CVN2</label>
+	                <input id="cvn-input" type="tel" class="mui-input-clear" maxlength="3" placeholder="卡背面签名栏后三位数">
+	            </div>
+	            <div class="mui-input-row input-row a-n">
+	                <label>有效期</label>
+	                <input id="date-input"  data-options='{"type":"month"}' type="tel" class="mui-input-clear"  placeholder="MM/YY" readonly="readonly">
+	            </div>
+				<div class="mui-input-row input-row a-n">
+	                <label>手机号</label>
+	                <input id="tel-input" type="tel" class="mui-input-clear" maxlength="11" placeholder="银行卡预留手机号">
+	            </div>
+	        </div>
+	            
+			<div class="p-lr m-t gray">
+				同意<a href="" class="open-link blue">服务协议</a>
+			</div>
+			<div class="mui-content-padded">
+				<button id='quick-next' class="red-btn">下一步</button>
+			</div>
+			<div class="gray tip-bottom"><span class="icon icon_tied_ps"></span>信息加密处理，仅用于银行验证绑定。</div>
+		</div>
+		<script src="js/dataConfig.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/form.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			var html = '';
+			var nxt_btn = mui('#quick-next')[0];
+			var cvn_input = mui('#cvn-input')[0];
+			var date_input = mui('#date-input')[0];
+			var tel_input = mui('#tel-input')[0];
+			
+			date_input.addEventListener('tap',function(){
+				var optionsJson = this.getAttribute('data-options')||'{}';
+				var options = JSON.parse(optionsJson);
+				var id = this.getAttribute('id');
+				//实例化对象
+				var picker = new mui.DtPicker(options);
+				picker.show(function(res){console.info(res)
+					date_input.value = res.m.value+'/'+res.y.value%100;
+				})
+			});
+			nxt_btn.addEventListener('tap',function(){
+				var	cvn_check = checkCvn(cvn_input.value);
+				var arrDate = date_input.value.split('/');
+				var	date_check = checkDate({m:arrDate[0],y:arrDate[1]});
+				var tel_check = checkPhone(tel_input.value);
+				html = cvn_check.txt+' '+date_check.txt+' '+tel_check.txt;
+				if(cvn_check.flag&&date_check.flag&&tel_check.flag){
+					sessionStorage.title = document.title;
+					mui.openWindow('html/bc_success.html');
+				}else{
+					mui.alert(html);
+				}
+			})
+		</script>
+	</body>
+
+</html>

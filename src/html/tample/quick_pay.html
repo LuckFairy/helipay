@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>快捷支付</title>
+		<link href="../dist/css/mui.css" rel="stylesheet" />
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			.mui-input-group label {
+				width: 22%;
+			}
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 78%;
+			}
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			.mui-btn {
+				padding: 10px;
+			}
+			.bg-gray {
+				background-color: #EFEFF4;
+				font-size: 17px;
+			}
+			.color-gray {
+				color: #999999;
+			}
+			.mui-input-row .width-auto {
+				width: auto;
+			}
+			#quick-pay-list .bank-radio-box {
+				padding: 11px 12px;
+				box-sizing: border-box;
+				height: auto;
+				line-height: auto;
+				position: relative;
+			}
+			#quick-pay-list .bank-radio-box .desc-box img {
+				width: 42px;
+				height: 42px;
+				line-height: 42px;
+				margin-right: 12px
+			}
+			#quick-pay-list .bank-radio-box .bank-radio {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content" id="quick-pay-list">
+
+			<form class="mui-input-group">
+				<div class="mui-input-row bg-gray">
+					<label class="width-auto">金额（元）</label>
+				</div>
+				<div class="mui-input-row">
+					<label><span class="mui-icon mui-icon-info"></span></label>
+					<input id='amount' type="text" class="mui-input-clear mui-input" placeholder="0.00">
+				</div>
+				<div class="mui-input-row bg-gray">
+					<label class="color-gray width-auto">请选择支付银行卡</label>
+				</div>
+				<!--添加银行-->
+				<ul class="mui-table-view mui-grid-view mui-grid-9 mui-grid-view-white">
+					<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12">
+						<a href="add_back_card.html" class="mui-navigate-right opened-link" id="bank-add">
+							<div class="mui-media-body" style="text-align: left;height: 32px; line-height: 32px;"><span><span class="mui-icon mui-icon-plus" style="font-size: 24px;"></span></span><span style="margin-left: 20px;">添加银行卡</span></div>
+						</a>
+					</li>
+				</ul>
+				<!--银行列表-->
+				<div class="mui-input-row mui-radio mui-right bank-radio-box">
+					<div class="desc-box">
+						<img class="mui-media-object mui-pull-left" src="../dist/images/bank_serve_1.jpg">
+						<div class="mui-media-body">
+							中国银行
+							<p class="mui-ellipsis">账号<span>66666666</span></p>
+						</div>
+					</div>
+					<input name="radio1" type="radio" value="66666666" class="bank-radio">
+				</div>
+				<div class="mui-input-row mui-radio mui-right bank-radio-box">
+					<div class="desc-box">
+						<img class="mui-media-object mui-pull-left" src="../dist/images/bank_serve_1.jpg">
+						<div class="mui-media-body">
+							建设银行
+							<p class="mui-ellipsis">账号<span>66666666</span></p>
+						</div>
+					</div>
+					<input name="radio1" type="radio" class="bank-radio" checked>
+				</div>
+				<div class="mui-input-row mui-radio mui-right bank-radio-box">
+					<div class="desc-box">
+						<img class="mui-media-object mui-pull-left" src="../dist/images/bank_serve_1.jpg">
+						<div class="mui-media-body">
+							工商银行
+							<p class="mui-ellipsis">账号<span>66666666</span></p>
+						</div>
+					</div>
+					<input name="radio1" type="radio" class="bank-radio" >
+				</div>
+				<!-- <ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../dist/images/bank_serve_1.jpg">
+							<div class="mui-media-body">
+								中国银行
+								<p class="mui-ellipsis">账号<span>66666666</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+							<div class="mui-media-body">
+								建设银行
+								<p class="mui-ellipsis">账号<span>66666666</span></p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+							<div class="mui-media-body">
+								工商银行
+								<p class="mui-ellipsis">账号<span>66666666</span></p>
+							</div>
+						</a>
+					</li>
+				</ul> -->
+			</form>
+			<div class="mui-content-padded">
+				<button id='quick-pay' class="mui-btn mui-btn-block mui-btn-danger">提交</button>
+			</div>
+		</div>
+		<script src="../dist/js/mui.min.js"></script>
+		<script>
+			mui.init();
+		</script>
+	</body>
+
+</html>

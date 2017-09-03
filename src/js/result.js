@@ -1,0 +1,10 @@
+mui.ready(function(){
+	//点击返回首页
+	mui('.mui-content').on('tap','.back-home',function(){
+		mui.openWindow('index.html');
+	})
+	//点击继续收款
+	mui('.mui-content').on('tap','.continue-pay',function(){
+		mui.openWindow('html/sk_my.html');
+	})
+})

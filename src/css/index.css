@@ -1,0 +1,88 @@
+.card-content {
+  background: #fff;
+  overflow: hidden;
+  margin: 0;
+  border-bottom: 1px solid #f3f3f3; }
+  .card-content .card-row-title {
+    color: #999;
+    font-size: 15px;
+    margin: 26px auto 12px;
+    text-align: center; }
+  .card-content .card-row-input {
+    position: relative;
+    margin: 0 auto 32px;
+    text-align: center; }
+    .card-content .card-row-input .icon_eye_open {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -10px; }
+  .card-content .input-password-a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .card-content .input-password-click {
+    width: 154px; }
+  .card-content .input-password {
+    font-size: 29px;
+    color: #444;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+
+.tixian {
+  font-size: 12px;
+  color: #ff8c6d;
+  margin-left: 6px;
+  line-height: 40px; }
+
+.shoukuan {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(../images/index_bg_pic.png);
+  background-size: 100%;
+  border-bottom: none; }
+  .shoukuan .shoukuan-row {
+    margin: 0 auto;
+    text-align: center;
+    padding: 21px 0 41px; }
+  .shoukuan .img-shoukuan {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(../images/index_receivables_bg.png);
+    position: relative; }
+    .shoukuan .img-shoukuan .btn-shoukuan {
+      position: absolute;
+      color: #fff;
+      font-size: 12.5px;
+      top: 62px;
+      left: 50%;
+      margin-left: -24px; }
+
+.mui-content {
+  background: #fff;
+  padding-bottom: 0;
+  margin-bottom: 50px; }
+
+.mui-grid-view.mui-grid-9 {
+  background: #fff;
+  margin: 0; }
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+  border-bottom: none;
+  padding: 5px 15px; }

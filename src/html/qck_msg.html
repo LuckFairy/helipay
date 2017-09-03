@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>快捷支付</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/password.css"/>
+	
+	</head>
+
+	<body>
+
+		<!--内容页-->
+		<div class="mui-content">
+				<div class="gap">
+					<img  src="images/line_red@2x.png"/>
+					请输入手机尾号 <span class="blue">1234</span> 收到的验证码。
+				</div>
+	        <div class="mui-input-group input-group a-n b-n">
+				<div class="mui-input-row input-row a-n ">
+	                <label>验证码</label>
+	                <div class="input-row-div">
+	                	<input id="msg-input" type="tel" class="mui-input-clear mui-input" maxlength="6" placeholder="输入验证码">
+	                </div>
+	                <button type="button" class="msg-btn white-btn">获取验证码</button>
+	            </div>
+
+			</div>
+			
+			<div class="mui-content-padded">
+				<button id='pay-btn' class="red-btn full-btn opacity">提交支付</button>
+			</div>
+		</div>
+		<script src="js/dataConfig.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			var check_flag = false;//验证失败
+			var pay_btn = mui('#pay-btn')[0];
+			var msg_input = mui('#msg-input')[0];
+			var msg_btn = mui('.msg-btn')[0];
+			var num = 9999;//后台验证码
+			//验证码按钮
+			timer({
+					dom:msg_btn,
+					time:60
+				})
+			msg_btn.addEventListener('tap',function(){
+				if(hasClass(this,'white-btn')){
+					timer({
+						dom:this,
+						time:60
+					})
+				}
+			})
+			//验证码输入框
+			var txt = '';
+			msg_input.addEventListener('input',function(){
+				var v = this.value;
+				v = v.replace(/[^0-9]$/g,'');
+				this.value = v;
+				if(v==null||v.length==0){
+					txt = '验证码不能为空';
+					check_flag = false;
+					pay_btn.className = 'red-btn full-btn opacity';
+					
+				}else if(v!=num){
+					txt = '验证码输入不正确';
+					check_flag = false;
+					pay_btn.className = 'red-btn full-btn opacity';
+				}else{
+					check_flag = true;
+					pay_btn.className = 'red-btn full-btn';
+				}
+			})
+			//点击提交支付
+			pay_btn.addEventListener('tap',function(){
+				if(check_flag){
+					var flag = 0;//0默认跳转到交易结果交易中页面,1跳转到交易成功页面，2跳转到交易失败页面
+					switch(flag){
+						case 1:$url='result_success.html';break;
+						case 2:$url='result_fail.html';break;
+						case 0:
+						default:$url='result_ing.html';break;
+						
+					}
+					mui.openWindow('html/'+$url);
+				}else if(txt.length>0){
+					mui.alert(txt);
+				}
+			})
+		</script>
+	</body>
+
+</html>

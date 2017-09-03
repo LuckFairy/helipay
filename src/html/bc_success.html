@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>绑定交易卡</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/result.css"/>
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			document.title = sessionStorage.title?sessionStorage.title:'绑定结算卡';
+			dataConfig.c_list_flag = true;
+		</script>		
+	</head>
+
+	<body >
+	
+		<!--内容页-->
+		<div class="mui-content white-bg">
+			
+			<div class="result-img">
+					<img src="images/result_success.png" alt="" />
+			</div>
+	           <div class="result-txt">
+					绑定成功
+				</div>
+			
+			<div class="mui-content-padded">
+				<a href="html/sk_my.html" class="open-link" style="display: inline-block;margin-top: 90px;width: 100%;">
+					<button  class="red-btn" style="width: 100%;">我要收款</button>
+				</a>
+			</div>
+		</div>
+		
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+
+</html>

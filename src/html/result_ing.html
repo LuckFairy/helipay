@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--头部名称跟用户的选择的付款方式变化，后台绑定用户选中方式-->
+		<title>交易结果</title>
+		<!--路径位置-->
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/result.css" />
+	</head>
+	<body>
+		<div class="mui-content white-bg">
+			<div class="mui-scroll">
+				<div class="result-img">
+					<img src="images/result_ing.png" alt="" />
+				</div>
+				<div class="result-txt orange-color">
+					处理中
+				</div>
+				<div class="result-amount">
+					￥10000.00
+				</div>
+				<ul class="result-list">
+					<li class="result-list-row">
+						<label for="">手续费</label>
+						<span class="mui-pull-right">￥6.00</span>
+					</li>
+					 <li class="result-list-row">
+						<label for="">到帐金额</label>
+						<span class="mui-pull-right">￥9994.00</span>
+					</li>
+				</ul>
+				<div class="line" ></div>
+				<div class="footer">
+				<button class="back-home white-btn">返回首页</button>
+				<div style="width:15px;height:39px ;"></div>
+				<button class="continue-pay red-btn">继续收款</button>
+			</div>
+				<!--后台根据数据来显示，有数据说明就显示，没有就隐藏-->
+				<div class="pay-explain">
+					<div class="pay-explain-title">
+						<span class="icon icon_pay_explain"></span>说明
+					</div>
+					<div class="pay-explain-txt">
+						交易将在24小时内处理完成，请注意查看订单状态。
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js" ></script>
+		<script src="js/result.js"></script>
+	</body>
+</html>

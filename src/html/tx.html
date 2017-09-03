@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>提现</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = true;
+		</script>
+		<style type="text/css">
+			.card-content{
+				background: #fff;
+			}
+			.card-row{
+				margin:0 15px;
+				position: relative;
+			}
+			.card-row .gray{
+				padding-top: 16px;
+			}
+			.card-row .mui-input-row{
+				font-size: 28px;
+				
+			}
+			.card-row .mui-input-row input{
+				font-size: inherit;
+				padding: 0;
+				line-height: 1;
+				height: 67px;
+			}
+			.card-row .mui-input-row input:-ms-input-placeholder{
+				font-size: 14px;
+				line-height: 58px;
+			}
+			.card-row .mui-input-row input::-webkit-input-placeholder{
+				font-size: 14px;
+				line-height: 58px;
+			}
+			.card-row .mui-input-row label{
+				padding: 19px 10px 20px 0;
+				text-align: left;
+				line-height: 1;
+			}
+			.mui-input-row .mui-input-clear~.mui-icon-clear{
+				top:24px;
+			}
+			.table-view-cell>img{
+				width: 19px;height: 19px;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<!--内容页-->
+		<div class="mui-content">
+			<div class="gap15"></div>
+			<div class="card-content m-l m-r">
+				<ul class="table-view p9 ">
+					<li class="table-view-cell a-n p-l">
+						<img src="images/logo/ICBC.png" />
+						中国工行银行(2544)
+					</li>
+				</ul>
+				<div class="card-row b a">
+					<div class="gray ">提现金额</div>
+					<div class="mui-input-row">
+				        <label style="width: auto;">￥</label>
+				        <input style="float: left;" id="tx-input" type="number" class="mui-input-clear" placeholder="最低2元">
+				    </div>
+			 		
+			 	</div>
+			 	<ul class="table-view ">
+					<li class="table-view-cell a-n">
+						<span class="gray" id="leave-money">账户余额￥10000.00</span>
+						<a href="javascript:;" id="all-money" class="red-slight  mui-pull-right">全部提取</a>
+					</li>
+				</ul>
+			</div>
+			<div class="gap10"></div>
+			<ul class="table-view m-l m-r">
+				<li class="table-view-cell a-n p">
+					手续费
+					<span class="gray" id="rate-money">￥0.06</span>
+					<a href="html/rate_my.html" class="red-slight open-link mui-pull-right">查看费率</a>
+				</li>
+			</ul>
+			<div class="p-lr" style="margin-top: 44px;">
+				<a href="javascript:;">
+					<button id="tx-btn" class="red-btn full-btn opacity" >提现</button>
+				</a>
+			</div>
+		</div>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			var num = {
+				min:2,//最低限额
+				max:10000,//最高额度
+				balance:10000,//账户余额
+				rate:0.006,//手续费
+			},
+			check_flag = false,
+			tx_input = mui('#tx-input')[0],
+			leave_info = mui('#leave-money')[0],
+			rate_info = mui('#rate-money')[0],
+			tx_btn = mui('#tx-btn')[0],
+			all_btn = mui('#all-money')[0];
+			all_btn.addEventListener('tap',function(){
+				tx_input.value = num.balance;
+				rate_info.innerText = num.balance*num.rate;
+				leave_info.className = 'gray';
+				leave_info.innerHTML = '账户余额'+num.balance+'元';
+				check_flag = true;
+				tx_btn.className = 'red-btn full-btn';
+			})
+			if(tx_input.value!=null||tx_input.value>0){
+				if(tx_input.value<=num.max&&tx_input.value>=num.min){
+					check_flag = true;
+					tx_btn.className = 'red-btn full-btn';
+				}
+			}
+			tx_input.addEventListener('input',function(){
+				var v = this.value;
+				if(v>num.max){
+					this.value = v.toString().slice(0,6);
+					leave_info.className = 'red';
+					leave_info.innerHTML = '提现金额超出账户余额';
+					check_flag = false;
+					tx_btn.className = 'red-btn full-btn opacity';
+				}else if(v<num.min){
+//					this.value = num.min;
+					leave_info.className = 'red';
+					leave_info.innerHTML = '最低不能低于'+num.min+'元';
+					check_flag = false;
+					tx_btn.className = 'red-btn full-btn opacity';
+				}else{
+					rate_info.innerText = v*num.rate;
+					leave_info.className = 'gray';
+					leave_info.innerHTML = '账户余额'+num.balance+'元';
+					check_flag = true;
+					tx_btn.className = 'red-btn full-btn';
+				}
+			})
+			tx_btn.addEventListener('tap',function(){
+				if(check_flag){
+					mui.openWindow('html/tx_result_success.html');
+				}
+			})
+			
+		</script>
+	</body>
+
+</html>

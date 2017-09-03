@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--头部名称跟用户的选择的付款方式变化，后台绑定用户选中方式-->
+		<title>交易结果</title>
+		<!--路径位置-->
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/result.css" />
+	</head>
+	<body>
+		<div class="mui-content white-bg">
+			<div class="mui-scroll">
+				<div class="result-img">
+					<img src="images/result_success.png" alt="" />
+				</div>
+				<div class="result-txt">
+					交易成功
+				</div>
+				<div class="result-amount">
+					￥10000.00
+				</div>
+				<ul class="result-list">
+					<li class="result-list-row">
+						<label for="">手续费</label>
+						<span class="mui-pull-right">￥6.00</span>
+					</li>
+					 <li class="result-list-row">
+						<label for="">到帐金额</label>
+						<span class="mui-pull-right">￥9994.00</span>
+					</li>
+				</ul>
+				<div class="line" ></div>
+			<div class="show-box">
+					<div class="icon-left">
+						<img src="images/pay_line.png" alt="" / class="pay-line">
+						<span class="icon icon_pay_success icon-top"></span>
+						<span class="icon icon_pay_gray icon-bottom"></span>
+						
+					</div>
+					<div class="txt-right">
+						<dl class="first-item">
+							
+							<dt class="first-item-row">
+								<span class="blue">收款成功</span>
+								<span class="time">03-31&nbsp;09:34</span>
+							</dt>
+							<dd class="first-item-row ">
+								<span class="bank">付款账户</span>
+								<span>招商银行（2222）</span>
+							</dd>
+						</dl>
+						<dl class="second-item">
+							<dt>
+								<span class="black">银行到账</span>
+								<span class="time">最晚03-31 09:34</span>
+							</dt>
+							<dd >
+								<span class="bank">收款账户</span>
+								<span >建设银行（1234）</span>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			<div class="footer">
+				<button class="back-home">返回首页</button>
+				<div style="width:15px;height:39px ;"></div>
+				<button class="continue-pay">继续收款</button>
+			</div>
+				<!--后台根据数据来显示，有数据说明就显示，没有就隐藏-->
+				<div class="pay-explain">
+					<div class="pay-explain-title">
+						<span class="icon icon_pay_explain"></span>说明
+					</div>
+					<div class="pay-explain-txt">
+						正常情况下，资金实施转入收款行，实际到账时间取决于收款行处理情况，最晚不超过24小时。
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js" ></script>
+		<script src="js/result.js"></script>
+	</body>
+</html>

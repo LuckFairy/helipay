@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的费率</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/rate_my.css"/>
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = true;
+		</script>
+		
+	</head>
+
+	<body>
+	
+		<!--内容页-->
+		<div class="mui-content">
+			<div class="gap15"></div>
+			<div class="card-content m-l m-r">
+				<ul class="table-view">
+					<li class="table-view-cell">
+						<span class="icon icon_line_red"></span>
+						收款手续费
+					</li>
+					<li class="table-view-cell" style="padding:7px 0">
+						<span></span>
+						<span class="gray">收款费率</span>
+						<span class="gray">到帐失效</span>
+					</li>
+					<li class="table-view-cell">
+						<span class="b-r">快捷支付</span>
+						<span class="b-r">0.60%/笔</span>
+						<span>实时</span>
+					</li>
+					<li class="table-view-cell">
+						<span class="b-r">银联支付</span>
+						<span class="b-r">0.60%/笔</span>
+						<span>实时</span>
+					</li>
+				</ul>
+				<div class="gap15"></div>
+				<ul class="table-view">
+					<li class="table-view-cell">
+						<span class="icon icon_line_red"></span>
+						提现手续费
+					</li>
+					<ul class="list">
+						<li><span>提现手续费，0.02%+2元/笔。</span></li>
+						<li><span>闪电到账，收款交易成功后，系统自动提现。</span></li>
+						<li><span>正常到账，收款交易成功后，资金入账个人账户，需用户进入我的-我的账户手动提现。</span></li>
+					</ul>
+				</ul>
+			</div>
+			<div class="mui-content-padded">
+				<button class="red-btn mui-action-back full-btn">返回</button>
+			</div>
+		</div>
+		<script src="js/header.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+
+</html>

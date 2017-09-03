@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>银行卡支持列表</title>
+		<base href="../" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/tabbar_we.css"/>
+		<script src="js/dataConfig.js"></script>
+		<script type="text/javascript">
+			dataConfig.setHead_flag = false;
+		</script>
+	</head>
+	<body>
+		<div class="mui-content">
+			<div class="gap" style="height: 37px;"></div>
+			<ul  class="table-view">
+				<li class="table-view-cell a-n">
+					<!--是否设置提现密码，没有提供设置提现密码，有就提供修改提现密码-->
+					<a class="navigate-right open-link" href="html/psw_set.html">设置提现密码</a>
+					
+				</li>
+				<li class="table-view-cell a-n">
+					<!--是否设置提现密码，没有提供设置提现密码，有就提供修改提现密码-->
+					<a class="navigate-right open-link" href="html/psw_reset.html">修改提现密码</a>
+					
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/header.js"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/common.js"></script>
+</html>

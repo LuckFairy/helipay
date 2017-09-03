@@ -1,0 +1,82 @@
+@import '_config.scss';
+.bar{
+    height: 45px;
+    background: $white-color;
+    a{
+        display: block;
+        float: left;
+        line-height: 45px;
+        text-align: center;
+        color:$black-color;
+        font-size: $fontsize15;
+         position: relative;
+        .tab-label{
+            width: px2(166);
+            margin:0 auto;
+           
+        }
+    }
+    a.mui-active{
+        .tab-label{
+            color:$orange-color;
+            background:url(#{$url-img}bill_selected.png) no-repeat center bottom/100% auto;
+        }
+    }
+    .line-r:after{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 46px;
+        width: 1px;
+        content: '';
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        background-color: $line-color;
+        
+    }
+}
+//没有数据的时候提示
+.no-tips{
+    text-align: center;
+    margin-top: 45%;
+}
+//间隔样式改变
+.gap{
+    color: inherit;
+    font-size: $fontsize14;
+    line-height: 34px;
+}
+//列表图片改变
+.table-view .table-view-cell > .img{
+    max-width: px2(72);
+    img{
+        max-width: px2(72);
+        height: px2(72);
+    }
+}
+//交易详情页样式
+//show-group头部样式
+.show-group{
+    background: $white-color;
+    overflow: hidden;
+    padding-bottom:26px ;
+    text-align: center;
+    .show-group-title{
+        font-size: $fontsize15;
+        padding-top: 25px;
+        img{
+            width: 20px;
+            height: 17px;
+            margin-right: 10px;
+        }
+        
+    }
+    .show-group-count{
+        font-size: 30px;
+        padding-top: 15px;
+    }
+    .show-group-ph{
+        padding-top: 8px;
+    }
+}
+

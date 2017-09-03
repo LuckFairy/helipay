@@ -1,0 +1,54 @@
+@charset "UTF-8";
+body, html, .mui-content {
+  background: #fff; }
+
+.mui-content > .mui-table-view:first-child {
+  margin: 0; }
+
+p {
+  color: inherit; }
+
+/*银行卡样式*/
+.table-view {
+  padding-bottom: 19px; }
+  .table-view .table-view-cell {
+    margin-top: 12px;
+    padding: 18px 0 16px; }
+    .table-view .table-view-cell.card_bg_blue {
+      display: inline-block;
+      width: 100%;
+      height: 103px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-image: url(../images/card_bg_blue.png); }
+    .table-view .table-view-cell.card_bg_green {
+      display: inline-block;
+      width: 100%;
+      height: 103px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-image: url(../images/card_bg_green.png); }
+    .table-view .table-view-cell.card_bg_red {
+      display: inline-block;
+      width: 100%;
+      height: 103px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-image: url(../images/card_bg_red.png); }
+  .table-view .mui-media-object {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 13px;
+    margin-right: 11px;
+    border-radius: 50%;
+    background: #fff;
+    text-align: center; }
+    .table-view .mui-media-object img {
+      vertical-align: middle;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%; }

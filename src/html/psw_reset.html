@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>设置提现密码</title>
+		<base href="../" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/password.css"/>
+	</head>
+	<body>
+		
+	
+		<div class="mui-content">
+		<h4 class="set psw-title">请输入原提现密码。</h4>
+		<!--再次确认的密码的时候出现，去掉f-dn类-->
+		<h4 class="f-dn reset psw-title">确认提现密码。</h4>
+        <div class="pwd-box" >  
+			    <input type="tel" maxlength="6" class="pwd-input" id="pwd-input" >  
+			    <div class="fake-box">  
+			        <input type="password" readonly="">  
+			        <input type="password" readonly="">  
+			        <input type="password" readonly="">  
+			        <input type="password" readonly="">  
+			        <input type="password" readonly="">  
+			        <input type="password" readonly="">  
+			    </div>  
+			</div>  
+       <div class="btn-forgetpassword"><a href="html/psw_find.html" class="open-link">忘记密码？</a></div>     
+        
+    </div>
+    	<script src="js/dataConfig.js"></script>
+    	<script src="js/header.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/zepto-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var $input = $(".fake-box input"),j=0;  
+            $("#pwd-input").on("input", function() {  
+                var pwd = $(this).val().trim();  
+                for (var i = 0, len = pwd.length; i < len; i++) {  
+                    $input.eq("" + i + "").val(pwd[i]);  
+                }  
+                $input.each(function() {  
+                    var index = $(this).index();  
+                    if (index >= len) {  
+                        $(this).val("");  
+                    }  
+                });  
+                if (len == 6) {  
+                    //执行其他操作  
+                    j++;
+                    if(j==1){
+                    	$('.set').hide();
+                    	$('.reset').show();
+                    	$input.each(function() {  
+				                        $(this).val("");  
+				                });  
+                    }else{
+                    	mui.toast('支付密码设置成功',{ duration:1000, type:'div'});
+                    	setTimeout(function(){
+                    		mui.openWindow('html/psw_manage.html');
+                    	},1000);
+                    }
+                }  
+            });  
+		</script>
+	</body>
+
+</html>

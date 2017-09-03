@@ -1,0 +1,97 @@
+h4 {
+  color: #666;
+  font-size: 12px; }
+
+.mui-table-view .mui-table-view-cell {
+  line-height: 50px;
+  padding: 0; }
+  .mui-table-view .mui-table-view-cell input {
+    padding: 0; }
+
+/*.popover-view .mui-navigate-right:after {
+  color: #dd524d;
+  content: '\e472'; }*/
+
+.mui-table-view-cell > a:not(.mui-btn) {
+  margin: 0;
+  margin-left: 15px; }
+
+.title-ground {
+  position: relative;
+  background: #fff;
+  margin-top: 32px;
+  padding: 0 18px;
+  margin: 32px 15px 15px;
+  -webkit-box-shadow: 0 2px 7px #dadada;
+          box-shadow: 0 2px 7px #dadada;
+  border-radius: 8px; }
+  .title-ground .icon_write {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -33px;
+    z-index: 3; }
+  .title-ground h4 {
+    padding-top: 22px;
+    font-size: 12px; }
+  .title-ground .mui-input-row:nth-of-type(1) {
+    margin-top: 17px;
+    margin-bottom: 25px;
+    font-size: 24px; }
+    .title-ground .mui-input-row:nth-of-type(1) label {
+      width: auto;
+      padding: 0; }
+    .title-ground .mui-input-row:nth-of-type(1) input {
+      padding: 0;
+      height: auto;
+      margin-left: 13px;
+      font-size: 24px;
+      width: 65%;
+      float: left; }
+  .title-ground .mui-input-row:nth-of-type(2) {
+    height: 38px;
+    line-height: 38px;
+    border-top: 1px dashed #6E6E6E; }
+    .title-ground .mui-input-row:nth-of-type(2) input {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 12px; }
+
+.input-group {
+  background: none; }
+  .input-group h4.mui-table-view-cell {
+    padding-left: 15px;
+    height: 39px;
+    line-height: 39px;
+    margin-top: 0;
+    margin-bottom: 0; }
+
+.mui-popover-bottom {
+  background: #fff; }
+  .mui-popover-bottom .popover-title {
+    background: #fbfbfb;
+    color: #1b1b1b;
+    font-size: 12px;
+    line-height: 42px;
+    text-align: center; }
+    .mui-popover-bottom .popover-title .mui-icon {
+      float: right;
+      margin-right: 15px;
+      margin-top: 8px; }
+  .mui-popover-bottom ul:nth-of-type(2) img {
+    width: 18px;
+    height: 18px; }
+  .mui-popover-bottom .mui-table-view .mui-table-view-cell {
+    line-height: inherit;
+    padding: 6px 0; }
+  .mui-popover-bottom .popover-view {
+    max-height: 264px;
+    overflow-y: auto; }
+
+.mui-popover.mui-popover-action .mui-table-view {
+  color: inherit;
+  margin: 0;
+  text-align: inherit;
+  border-radius: 0;
+  background: #fff; }
