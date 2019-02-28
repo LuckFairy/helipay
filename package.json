@@ -1,7 +1,7 @@
 {
-  "name": "helibao",
+  "name": "helipay",
   "version": "1.0.0",
-  "description": "pc端收银台项目",
+  "description": "手机端提现项目",
   "main": "gulp-file.js",
   "directories": {
     "doc": "doc"
